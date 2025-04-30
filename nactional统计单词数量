@@ -1,0 +1,13 @@
+def count_words(filename):
+    try:
+        with open(filename, 'r') as file:
+            content = file.read()
+            words = content.split()
+            return len(words)
+    except FileNotFoundError:
+        return "文件不存在"
+
+# 使用示例
+file_path = "sample.txt"
+word_count = count_words(file_path)
+print(f"文件 '{file_path}' 中共有 {word_count} 个单词")
